@@ -6,12 +6,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "next": "15.2.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -23,5 +27,11 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "@eslint/eslintrc": "^3"
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "bun run lint",
+      "git add ."
+    ]
   }
 }
